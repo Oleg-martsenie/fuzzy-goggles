@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .3s linear;
+    outline: none;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-padding-top: 8rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --main-color: #443;
+    --font-main-size: 1.5rem;
+    --font-text-color: #454545;
+    --background-color-button: #B2D5DE;
+    --text-stroke-color: #B2DECD;
+    --border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+    --box-shadow: .1rem 0 .4rem rgba(0, 0, 0, 0.678);
+}
+
+
+header {
+    padding: 2rem 9%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    position: fixed;
+    left: 0; right: 0; top: 0;
+}
+
+.header .logo {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: .2rem;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.header .menu {
+    padding: 0.5rem;
+}
+
+.header .menu i {
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.menu-area {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 115%;
+    left: 5rem; right: 2rem;
+    z-index: 1000;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.menu-area.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.menu-area nav {
+    background-color: rgba(238, 238, 238, 0.412);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    display: flex;
+    max-height: 100vh;
+    flex-direction: column;
+    padding: 8rem ;
+}
+
+.menu-area nav a {
+    text-align: center;
+    font-size: var(--font-main-size);
+    color: var(--main-color);
+    text-transform: uppercase;
+    margin: 2rem 0;
+    padding: 1rem;
+    width: 100%;
+}
+
+.menu-area nav a:hover {
+    background-color: var(--font-text-color);
+    color: #FFF;
+}
+
+/* Header Section Ends Here */
+
+/* Hero Starts Here*/
+
+.hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    height: 100vh;
+}
+
+.hero .left-side {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem;
+
+}
+
+.hero .info {
+    color: #FFF;
+}
+
+.hero .info .professions {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgb(243, 243, 155);
+    text-transform: uppercase;
+}
+
+.hero .info .profile h1 {
+    font-size: 6rem;
+    letter-spacing: .2rem;
+    font-weight: bolder;
+    padding: 3rem 0 3rem 0;
+}
+
+
+.hero .info .buttons button {
+    padding: 0.9em 2em;
+    border: 2px solid #17C3B2;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+    color: #ddd;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: var(--text-stroke-color);
+    font-weight: 900;
+    margin-left: 1rem;
+    
+}
+   
+button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #17C3B2;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+   
+.hero .info .buttons button:hover::before {
+    width: 105%;
+}
+   
+.hero .info .buttons button:hover {
+    color: #111;
+}
+
+.hero .info .buttons button.normal {
+    cursor: pointer;
+    font-weight: 900;
+    border: 2px solid #a6c900;
+    background: #a6c900;
+    color: #000;
+}
+
+button.normal::before {
+    content: '';
+    background: #a6c900;
+}
+
+
+.hero .right-side {
+    background-image: url('/img/Profile.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.footer span {
+    text-align: center;
+    color: #EEE;
+}
+
+.footer span a {
+    color: #fff;
+}
+
+.footer span a:hover {
+    color: #a6c900;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    header {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        position: initial;
+        background-color: #000;
+    }
+    .header .logo{
+        color: #a6c900
+    }
+    .header .menu i {
+        color: #a6c900;
+    }
+    .menu-area {
+        top: 30%;
+    }
+    .menu-area nav {
+        width: 100%;
+        padding: 4rem;
+        height: 20%;
+        background-color: rgba(255, 255, 255, 0.892);
+        margin-bottom: 2rem;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+    }
+    .hero .info .profile h1 {
+        font-size: 4rem;
+        font-weight: 600;
+    }
+    .hero .info .buttons button,
+    .hero .info .buttons button.normal {
+        padding: .4rem 1rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+    .footer span {
+        color: var(--font-text-color);
+    }
+    .footer span a {
+        color: #17C3B2;
+    }
+    .hero .left-side {
+        padding: 0 4rem;
+        height: 30rem;
+    }
+    .hero .right-side {
+        height: 100vh;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 45%;
+    }
+    .hero .info .professions {
+        font-size: 1.5rem;
+        margin-bottom: .3rem;
+    }
+    .hero .info .profile h1 {
+        font-size: 3rem;
+        padding: .7rem .4rem;
+    }
+    .hero .info .buttons {
+        margin-top: 1rem;
+    }
+}
