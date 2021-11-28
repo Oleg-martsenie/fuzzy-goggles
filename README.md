@@ -4,7 +4,7 @@
 <ul>
 <li>Fontes</li>
 <li>Cores e Backgrounds</li>
-<li>Images</li>
+<li>Imagens</li>
 <li>Uso do Grid insted do Flexbox</li>
 </ul>
 </p>
